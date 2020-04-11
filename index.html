@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubudget</title>
+    <link rel="stylesheet" href="assests/css/bootstrap.css">
+    <link rel="stylesheet" href="assests/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <script src="assests/js/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">Ubudget</a>
+                        <!-- <button type="button" class="btn btn-default navbar-btn">Sign in</button>
+                        <button type="button" class="btn btn-default navbar-btn">Sign in</button> -->
+                    </div>
+        
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <button type="button" class="btn btn-default navbar-btn">Sign in</button>
+                            <button type="button" class="btn btn-default navbar-btn">Sign up</button>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
+            <div id="jt-center">
+                <h1>UBUDGET</h1>
+                <div id="border"></div>
+                <div>
+                    <!-- <a href="#move-to-div"> -->
+                        <!-- Link to your content ID -->
+                        <div id="arrow-down">
+                            <i class="fa fa-chevron-down"></i>
+                        </div>
+                    <!-- </a> -->
+                </div>
+                <p>Click To Start Budgeting!</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <form onsubmit="return false">
+                    <!--FORM START-->
+                    <div id="move-to-div" class="input-div">
+                        <!--INCOME-->
+                        <h2>Monthly Income</h2>
+                        <div class="form-group">
+                            <label for="salary">Salary/Wage</label>
+                            <input class="form-control income" id="salary" type="text" required placeholder="$">
+                        </div>
+                        <div class="form-group">
+                            <label for="salary2">Other Income</label>
+                            <input class="form-control income" id="salary2" type="text" placeholder="$">
+                        </div>
+                    </div>
+                    <div class="input-div">
+                        <!--EXPENSES-->
+                        <h2>Monthly Housing Expenses </h2>
+                        <div class="form-group">
+                            <label for="rent-mortgage">Rent/Mortgage</label>
+                            <input class="form-control expenses" id="rent-mortgage" type="text" placeholder="$">
+                        </div>
+                        <div class="form-group">
+                            <label for="util">Utilities</label>
+                            <input class="form-control expenses" id="util" type="text" placeholder="$">
+                        </div>
+                        <div class="form-group">
+                            <label for="inter-cable">Internet/Cable</label>
+                            <input class="form-control expenses" id="inter-cable" type="text" placeholder="$">
+                        </div>
+                    </div>
+                    <div class="input-div">
+                        <h2>Car/Transit Expenses</h2>
+                        <div class="form-group">
+                            <label for="insurance">Insurance</label>
+                            <input class="form-control expenses" id="insurance" type="text" placeholder="$">
+                        </div>
+                        <div class="form-group">
+                            <label for="car-pay">Finance Payments</label>
+                            <input class="form-control expenses" id="car-pay" type="text" placeholder="$">
+                        </div>
+                        <div class="form-group">
+                            <label for="Fuel">Fuel</label>
+                            <input class="form-control expenses" id="fuel" type="text" placeholder="$">
+                        </div>
+                        <div class="form-group">
+                            <label for="transit">Transit</label>
+                            <input class="form-control expenses" id="transit" type="text" placeholder="$">
+                        </div>
+                    </div>
+                    <div class="input-div">
+                        <h2>Personal Expenses</h2>
+                        <div class="form-group">
+                            <label for="groceries">Groceries</label>
+                            <input class="form-control expenses" id="groceries" type="text" placeholder="$">
+                        </div>
+                        <div class="form-group">
+                            <label for="edu">Education (Loans/supplies)</label>
+                            <input class="form-control expenses" id="edu" type="text" placeholder="$">
+                        </div>
+                        <div class="form-group">
+                            <label for="subs">Subscriptions</label>
+                            <input class="form-control expenses" id="subs" type="text" placeholder="$">
+                        </div>
+                        <div class="form-group">
+                            <label for="other">Other</label>
+                            <input class="form-control expenses" id="other" type="text" placeholder="$">
+                        </div>
+                        <div class="form-group">
+                            <button id="submit">Budget!</button>
+                        </div>
+                    </div>
+                </form>
+                <!--FORM END-->
+                <div class="input-div" id="output-display">
+                    <h2 id="h2-results">Your Results</h2>
+                        <div id="output">
+                            <p>Your total monthly income is: $<span id="output1"></span></p>
+                            <p>Your total monthly expenses are: $<span id="output2"></span></p>
+                            <p>Your remainder is: $<span id="output3"></span></p>
+                        </div>
+                    <div class="table-responsive">
+                        <canvas height="400px" class="table" id="myChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <!--col end-->
+        </div>
+        <!--ROW 1 END-->
+    </div>
+    <!--CONTAINER END-->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js">
+    </script>
+    <script src="assests/js/budget.js"></script>
+</body>
+
+</html>
